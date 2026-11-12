@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10152d"><title>NEWS TOPUP BD</title>
+<link rel="manifest" href="manifest.json">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,"Noto Sans Bengali",sans-serif;background:#0b1023;color:#fff}
+header{padding:22px 16px;background:linear-gradient(120deg,#21105a,#10152d 60%,#063e45);text-align:center}
+.logo{font-size:clamp(26px,7vw,42px);font-weight:900;letter-spacing:1px;color:#ffe34f;text-shadow:0 3px #a43c13}
+header p{margin:6px 0 0;color:#d9ddff}.wrap{max-width:760px;margin:auto;padding:16px}
+h2{font-size:20px;margin:12px 0}.panel{background:#171e39;border:1px solid #303b65;border-radius:16px;padding:16px;margin:14px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.package{background:#202b50;border:1px solid #44558b;border-radius:12px;padding:14px;text-align:center}
+.package b{display:block;color:#73e4ff;font-size:19px}.package small{color:#d4dcff}
+label{display:block;margin:12px 0 6px;color:#dce3ff}input,select{width:100%;padding:13px;border-radius:10px;border:1px solid #52618b;background:#0d1430;color:#fff;font-size:16px}
+button{width:100%;border:0;border-radius:12px;padding:15px;margin-top:14px;background:linear-gradient(90deg,#ffb52e,#ffdf45);font-weight:800;font-size:17px;color:#20152a}
+.note{font-size:13px;color:#bdc8e9;line-height:1.6}.notice{background:#332b16;border:1px solid #856a2c;padding:12px;border-radius:10px;color:#ffe6a0;font-size:13px}
+footer{text-align:center;color:#9ba8d0;padding:22px;font-size:13px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style></head>
+<body>
+<header><div class="logo">👑 NEWS TOPUP BD</div><p>Free Fire Diamond Top-Up</p></header>
+<main class="wrap">
+<section class="panel"><h2>💎 ডায়মন্ড প্যাকেজ</h2><div class="grid">
+<div class="package"><b>25 💎</b><small>৳ মূল্য যোগ করুন</small></div>
+<div class="package"><b>50 💎</b><small>৳ মূল্য যোগ করুন</small></div>
+<div class="package"><b>115 💎</b><small>৳ মূল্য যোগ করুন</small></div>
+<div class="package"><b>240 💎</b><small>৳ মূল্য যোগ করুন</small></div>
+<div class="package"><b>355 💎</b><small>৳ মূল্য যোগ করুন</small></div>
+<div class="package"><b>Weekly</b><small>৳ মূল্য যোগ করুন</small></div>
+</div></section>
+<section class="panel"><h2>🎮 অর্ডার তথ্য</h2>
+<label for="uid">Free Fire Player UID</label><input id="uid" inputmode="numeric" placeholder="তোমার Player UID লিখুন">
+<label for="pack">প্যাকেজ নির্বাচন</label><select id="pack"><option>25 Diamonds</option><option>50 Diamonds</option><option>115 Diamonds</option><option>240 Diamonds</option><option>355 Diamonds</option><option>Weekly Membership</option></select>
+<label for="pay">পেমেন্ট পদ্ধতি</label><select id="pay"><option>bKash</option><option>Nagad</option><option>Rocket</option></select>
+<label for="trx">Transaction ID (ডেমো)</label><input id="trx" placeholder="পেমেন্ট চালু হলে TrxID দিন">
+<div class="notice">এটি একটি ডেমো UI। এখানে কোনো টাকা পাঠাবেন না। আসল অর্ডার, পেমেন্ট বা ডায়মন্ড ডেলিভারি এখনো সংযুক্ত নয়।</div>
+<button onclick="demoOrder()">ডেমো অর্ডার তৈরি করুন</button><p id="result" class="note" aria-live="polite"></p>
+</section>
+<section class="panel"><h2>📞 যোগাযোগ</h2><p class="note">Support নম্বর, Facebook পেজ ও সঠিক প্যাকেজের দাম অ্যাডমিন এখানে যোগ করবেন।</p></section>
+</main><footer>NEWS TOPUP BD • Unofficial fan-made starter template</footer>
+<script>
+function demoOrder(){const uid=document.getElementById('uid').value.trim();if(!/^\\d{5,15}$/.test(uid)){document.getElementById('result').textContent='সঠিক Player UID লিখুন (৫–১৫ সংখ্যা)।';return;}document.getElementById('result').textContent='ডেমো অর্ডার প্রস্তুত: UID '+uid+' • '+document.getElementById('pack').value+' • '+document.getElementById('pay').value+'. এটি কোথাও জমা হয়নি।';}
+if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script></body></html>

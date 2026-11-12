@@ -1,0 +1,1 @@
+Android APK packaging is not configured yet. Open Android Studio, create a WebView app, and load the hosted NEWS TOPUP BD website. An APK must be built and signed with Android SDK tools.
